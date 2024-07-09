@@ -12,13 +12,7 @@ import { MessagesService } from './messages.service';
 // @Controller is a class decorator
 @Controller('messages')
 export class MessagesController {
-  messagesService: MessagesService;
-
-  constructor() {
-    // Service is creating its own dependencies.
-    // DON'T DO THIS ON REAL APPS
-    this.messagesService = new MessagesService();
-  }
+  constructor(public messagesService: MessagesService) {}
 
   // @Get, @Post are method decorators; @Body, @Param are argument decorators
   @Get()
