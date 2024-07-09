@@ -1,11 +1,7 @@
 import { MessagesRepository } from './messages.repository';
 
 export class MessagesService {
-  messagesRepo: MessagesRepository;
-
-  constructor(messagesRepo: MessagesRepository) {
-    this.messagesRepo = messagesRepo;
-  }
+  constructor(public messagesRepo: MessagesRepository) {}
 
   async findOne(id: string) {
     return this.messagesRepo.findOne(id);
